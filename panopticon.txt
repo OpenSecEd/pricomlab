@@ -1,0 +1,7 @@
+They eyes of the mass-surveillance organisations cannot see what you're 
+doing here.  If you haven't already, you should read about Tor in URL
+
+    https://www.torproject.org/about/overview.html.en
+
+When done, the SHA-256 digest of this text is the name of the next file 
+to look into.

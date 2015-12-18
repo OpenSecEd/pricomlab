@@ -1,0 +1,17 @@
+Implement the following algorithm.
+
+Input: The text in this document.
+Output: The filename of the next step.
+
+Let X = [0] be a list containing one element, the integer zero.
+
+For each line L:
+    Let Y = 0.
+    For each character C in L:
+        Let Y = Y XOR ASCII(C), where ASCII(C) is the ASCII 
+        representation of the character C.
+    XOR Y and the last element in X.
+    Append Y to X.
+
+Return the concatenation of the hexadecimal representation of the 
+elements in X.
