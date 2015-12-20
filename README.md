@@ -17,11 +17,10 @@ maintainer is [Daniel Bosk][dbosk].  The latest release can be found under
 File Structure and Building
 -------------------------------------------------------------------------------
 
-To build the PDF, you must download the source code and its required 
+*To build* the PDF, after cloning the repository you must clone its required 
 submodules:
 
 ```shell
-$ git clone git@github.com:dbosk/pricomlab.git
 $ git submodule update --recursive --init
 $ make
 ```
@@ -38,3 +37,9 @@ The source files are structured as follows:
 - `pricomlab.bib` contains the bibliography entries, thus this file can be 
   included along with the reading instructions.
 
+*To contribute*, please [fork the repository][ForkARepo], make your changes, 
+commit them and then create a [pull request][PullRequest] in the original 
+repository.
+
+[ForkARepo]: https://help.github.com/articles/fork-a-repo/
+[PullRequest]: https://help.github.com/articles/using-pull-requests/
