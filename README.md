@@ -6,14 +6,11 @@ and steganography.  It's aim is for the students to reflect on private
 communication and learn about different methods available today.
 
 This lab is part of the [Open Security Education][OpenSecEd] project and the 
-maintainer is
-
-    [Daniel Bosk](https://github.com/dbosk/)
-
-The latest release can be found under [releases][Releases].  You can safely 
-link directly to the PDFs found there.
+maintainer is [Daniel Bosk][dbosk].  The latest release can be found under 
+[releases][Releases].  You can safely link directly to the PDFs found there.
 
 [OpenSecEd]: https://github.com/OpenSecEd/
+[dbosk]: https://github.com/dbosk/
 [Releases]: https://github.com/dbosk/pricomlab/releases
 
 
