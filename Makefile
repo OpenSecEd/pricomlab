@@ -1,25 +1,9 @@
-CATEGORY= 	security/labs
-DOCUMENTS= 	pricomlab.pdf
-FILES= 		pricomlab.tex aims.tex literature.tex literature.bib
+.PHONY: all
+all: pricomlab.pdf
 
-PACKAGE= 		pricomlab-src
-TARBALL_FILES= 	${FILES} Makefile
+SRC= 		pricomlab.tex aims.tex literature.tex literature.bib
 
-PUB_FILES= 	${PACKAGE}.tar.gz ${DOCUMENTS}
-
-pricomlab.pdf: ${FILES}
-
-clean:
-	${RM} ${DOCUMENTS}
-
-
-literature.bib: ../infosec.bib
-	ln -s $^ $@
-
-TARBALL_FILES= 	${FILES} Makefile
-
-clean:
-	${RM} literature.bib ${DOCUMENTS}
+pricomlab.pdf: ${SRC}
 
 
 # Yes, we thought that you might find this here ...
@@ -34,12 +18,15 @@ hiddenkey.jpg: key.jpg private.key
 		-d private.key \
 		key.jpg $@
 
+STUDENTS= 		$(shell cat students.txt)
 WWWROOT= 		/var/www/natsak
 CHALLENGE1= 	$(shell sha256 < panopticon.txt)
 CHALLENGE2= 	$(shell ./challenge1.py < challenge1.txt)
 
+.PHONY: publish-secret
 publish-secret: ${WWWROOT}/index.html
 
+.PHONY: clean clean-secret
 clean: clean-secret
 clean-secret:
 	${RM} panoptisteg.jpg panopticon.txt.asc
@@ -82,6 +69,26 @@ ${CHALLENGE2}: challenge2.txt
 		-r nobody@trmavqq7pf46h4xe.onion \
 		$<
 	mv $<.asc $@
+
+
+### Final level
+${FINAL}: final.txt
+	gpg -ase -u nobody@trmavqq7pf46h4xe.onion \
+		-r nobody@trmavqq7pf46h4xe.onion \
+		$<
+	mv $<.asc $@
+
+### Create the tickets to the passing grade
+
+${STUDENTS}: pass.txt
+	sed "s/|username|/$@/" $< | \
+		gpg -as > $@
+
+define passticket
+$${WWWROOT}/$(shell echo -n $1 | sha256): $1
+	${CP} $$< $$@
+endef
+$(foreach username,${STUDENTS},$(eval $(call passticket,${username})))
 
 
 ### INCLUDES ###

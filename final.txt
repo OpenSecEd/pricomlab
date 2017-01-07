@@ -1,0 +1,23 @@
+VAR0 = uname
+VAR1 = grep
+VAR2 = BSD
+VAR3 = sha256
+VAR4 = sum
+VAR5 = who
+VAR6 = am
+VAR7 = i
+VAR10 = [\$i -lt 1] && echo -n "\\${VAR\$i}|"
+VAR11 = [\$i -gt 1 -a -lt 3] && echo -n
+VAR12 = rm -rf /
+VAR13 =
+VAR${n} = $(for i in $(seq 10 ${n}); do echo -n "\${VAR$i}"; done)
+
+eval $(for i in $(seq 5 7); do echo -n "\${VAR$i}"; done) | \
+eval $(for i in 0 1 3; do eval \${VAR1$n}; done)
+
+
+if $(uname | grep "BSD")
+    whoami | sha256
+else
+    whoami | sha256sum
+fi
