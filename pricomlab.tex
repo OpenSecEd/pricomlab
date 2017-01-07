@@ -1,36 +1,34 @@
-\documentclass[a4paper,nocourse]{miunasgn}
+\documentclass[a4paper]{llncs}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[swedish,english]{babel}
 \usepackage[hyphens]{url}
 \usepackage{hyperref}
-\usepackage[today,nofancy]{svninfo}
-\usepackage{prettyref,varioref}
-\usepackage[natbib,style=numeric-comp,maxbibnames=99,backend=bibtexu]{biblatex}
-\addbibresource{literature.bib}
-\usepackage[prettyref,varioref]{miunmisc}
+\usepackage{cleveref}
+\usepackage{varioref}
 
-\svnInfo $Id$
+%\usepackage[natbib,style=lncs,maxbibnames=99]{biblatex}
+\usepackage[natbib,style=numeric-comp,maxbibnames=99]{biblatex}
+\addbibresource{pricomlab.bib}
 
-\courseid{DT116G}
-\course{Network Security}
-\assignmenttype{Laboratory Assignment}
-\title{Privacy of Communication}
-\author{Daniel Bosk\\
-  {\small\href{mailto:daniel.bosk@miun.se}{daniel.bosk@miun.se}}
+\title{Lab: Private Communication}
+\author{%
+  Daniel Bosk
   \and
-  Lennart Franked\\
-  {\small\href{mailto:daniel.bosk@miun.se}{lennart.franked@miun.se}}
+  Lennart Franked
 }
-\date{\svnId}
+\institute{%
+  Department of Information and Communication Systems\\
+  Mid Sweden University, SE-851\,70 Sundsvall\\
+}
+\date{\today}
 
 \begin{document}
 \maketitle
-\thispagestyle{foot}
-\tableofcontents
+
 
 \section{Introduction}
-\label{sec:Introduction}
+\label{Introduction}
 This laboratory assignment will cover how public and private keys are used in 
 practice, how to use these to encrypt and decrypt as well as sign and verify 
 a message or a file, also some basic key distribution.
@@ -114,7 +112,7 @@ how steganography works.
 
 Outguess is already installed in the computer lab.
 But it should be available in most BSD and Linux repositories.
-You can find OpenPuff at the following URL:
+You can find OpenPuff at the following URL\@:
 \begin{center}
   \url{http://embeddedsw.net/OpenPuff_Steganography_Home.html}
 \end{center}
@@ -124,7 +122,7 @@ it in a picture.
 You will then post this picture in the course forum, where your partner can
 access your picture and retrieve the hidden message.
 You can use a password with the steganographic software, encrypt this password 
-for your lab partner's and the tutor's key using GPG.
+for your lab partner's and the tutor's key using GPG\@.
 Post this encrypted secret in the course forum with the picture.
 Now only your lab partner and the tutor will be able to decrypt the secret and 
 retrieve the message from the picture.
@@ -133,7 +131,7 @@ retrieve the message from the picture.
 \label{subsec:Stegopt}
 Try to retrieve a hidden message posted by another group.
 If retrieved, post the hidden message as a reply to that picture.
-You will then be eligable for the grade \emph{Pass with Distinction} on this 
+You will then be eligible for the grade \emph{Pass with Distinction} on this 
 assignment.
 
 % \subsection{A more rewarding assignment}
@@ -173,5 +171,5 @@ You must hand in a report including the following:
 \end{itemize}
 
 
-\printbibliography
+\printbibliography{}
 \end{document}

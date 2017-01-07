@@ -1,9 +1,15 @@
+<<<<<<< HEAD
 .PHONY: all
 all: pricomlab.pdf
 
-SRC= 		pricomlab.tex aims.tex literature.tex literature.bib
+FILES= 		pricomlab.tex aims.tex literature.tex pricomlab.bib
 
-pricomlab.pdf: ${SRC}
+pricomlab.pdf: ${FILES}
+pricomlab.pdf: llncs biblatex-lncs
+
+.PHONY:
+clean:
+	${RM} pricomlab.pdf
 
 
 # Yes, we thought that you might find this here ...
@@ -95,5 +101,3 @@ $(foreach username,${STUDENTS},$(eval $(call passticket,${username})))
 
 INCLUDE_MAKEFILES=makefiles
 include ${INCLUDE_MAKEFILES}/tex.mk
-include ${INCLUDE_MAKEFILES}/package.mk
-include ${INCLUDE_MAKEFILES}/miun.course.mk
