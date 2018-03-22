@@ -1,3 +1,15 @@
+aliascnt.sty
+biblatex-lncs-src/
+llncs.cls
+llncs2e.zip
+lncs.bbx
+lncs.cbx
+lncs.dbx
+pricomlab.pdf
+remreset.sty
+splncs03.bst
+sprmindx.sty
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
