@@ -4,12 +4,15 @@
 \usepackage[swedish,english]{babel}
 \usepackage[hyphens]{url}
 \usepackage{hyperref}
-\usepackage{cleveref}
 \usepackage{varioref}
 
 %\usepackage[natbib,style=lncs,maxbibnames=99]{biblatex}
 \usepackage[natbib,style=numeric-comp,maxbibnames=99]{biblatex}
 \addbibresource{pricomlab.bib}
+
+\usepackage{bibsp}
+
+\usepackage{cleveref}
 
 \title{Lab: Private Communication}
 \author{%
@@ -27,51 +30,55 @@
 \maketitle
 
 
-\section{Introduction}
+\section{Introduction}%
 \label{Introduction}
+
 This laboratory assignment will cover how public and private keys are used in 
 practice, how to use these to encrypt and decrypt as well as sign and verify 
 a message or a file, also some basic key distribution.
 We will also cover alternative ways to try to evade prying eyes from finding
 your message.
-We will use the open source programs GNU Privacy Guard (GPG) and OpenPuff.
 
 
-\section{Aim}
+\section{Aim}%
 \label{sec:Aim}
+
 After completion of this assignment you will
 \begin{itemize}
-    \input{aims.tex}
+  \input{aims.tex}
 \end{itemize}
 
 
-\section{Reading instructions}
+\section{Reading instructions}%
 \label{sec:Reading}
+
 \input{literature.tex}
 
 
-\section{Tasks}
+\section{Tasks}%
 \label{sec:Tasks}
+
 This assignment is divided into two parts.
 The first part will cover cryptography---to hide the data---using email as 
 a usage example.
 The second part will cover steganography---to hide the presence of data.
 
-\subsection{Email security}
+\subsection{Email security}%
 \label{subsec:Email}
+
 In this part you will work with email security.
 You will start by creating your own key-pair after which you will upload your 
 public key to one of the public-key servers.
 Once you have done that you will send an encrypted email to one of your
-classmates which will be your lab partner.
+classmates who will be your lab partner.
 You should be able to find his or her public key on the key servers.
 
-Start by downloading and installing GPG,\footnote{%
+Start by downloading and installing \ac{GPG},\footnote{%
   If you are in a computer lab on campus, this is most probably already done.
-} select the appropriate version of GPG depending on what operating system you 
-use.
-Once you have GPG installed on your system, generate a key-pair and \emph{make 
-sure to make an active choice for what cipher and key size to use}.
+} select the appropriate version of \ac{GPG} depending on what operating system 
+you use.
+Once you have \ac{GPG} installed on your system, generate a key-pair and 
+\emph{make sure to make an active choice for what cipher and key size to use}.
 When finished, export your public key to the following key server:
 \begin{center}
   \url{pgp.mit.edu}
@@ -87,25 +94,25 @@ Next, find a way to communicate with your partner, such that you can
 confirm that they are who they say they are, and ask them to repeat the 
 fingerprint of their public key.
 Once verified you can publicly sign their public key with an approprite trust 
-level based on the type of verification you did.
-Give this signed version of the key back to your lab partner so he or she can 
-import it and resend it to the key server.
+level based on the type of verification you did and send this to the key server.
 
 When you have completed these steps you must send an encrypted email to the 
 tutor and await an encrypted response.
 The tutor will not accept your email unless your key on the key server is 
 signed by at least one person.
 
-\subsubsection{Social engineering using spoofing (optional)}
+\subsubsection{Social engineering using spoofing (optional)}%
 \label{subsec:Social}
+
 Try to trick a different classmate that you are their lab partner.
 Do this by spoofing an email or any other form of communication.
 Will you be able trick them into believing that your fingerprint is their 
 partners?
 What measures must be taken in order not to be tricked?
 
-\subsection{Steganography}
+\subsection{Steganography}%
 \label{subsec:Steganograhy}
+
 In this part you will work with steganography.
 By using either Outguess or OpenPuff you will get a practical understanding of 
 how steganography works. 
@@ -122,17 +129,16 @@ it in a picture.
 You will then post this picture in the course forum, where your partner can
 access your picture and retrieve the hidden message.
 You can use a password with the steganographic software, encrypt this password 
-for your lab partner's and the tutor's key using GPG\@.
+for your lab partner's and the tutor's key using \ac{GPG}.
 Post this encrypted secret in the course forum with the picture.
 Now only your lab partner and the tutor will be able to decrypt the secret and 
 retrieve the message from the picture.
 
-\subsubsection{Retrieving other groups' messages (Optional)}
+\subsubsection{Retrieving other groups' messages (optional)}%
 \label{subsec:Stegopt}
+
 Try to retrieve a hidden message posted by another group.
 If retrieved, post the hidden message as a reply to that picture.
-You will then be eligible for the grade \emph{Pass with Distinction} on this 
-assignment.
 
 % \subsection{A more rewarding assignment}
 % 
@@ -149,22 +155,26 @@ assignment.
 % Best of luck!
 
 
-\section{Examination}
+\section{Examination}%
 \label{sec:Exam}
+
 You must hand in a report including the following:
 \begin{itemize}
   \item A short summary of your key-generation process, including what cipher 
     you chose and the key length.
     \emph{You must motivate this, ``Because it was default'' is not a valid 
     motivation.}
+    (Why is the default a good default?)
   \item An explanation detailing how you verified that your partners public key 
     was the correct one.
-    Motivate why you chose the method you did, and based on this, how certain 
+    Motivate why you chose the method you did and, based on this, how certain 
     you are that this person actually is the same person that owns the public 
     key.
   \item A copy of the secret message you received from your tutor by email.
   \item A 250-words detailed description of how steganography works.
   \item Any proof of that you solved the optional assignments.
+    You will then be eligible for the grade \emph{Pass with Distinction} on this 
+    assignment.
 
 %  \item We will know if you solved the \enquote{more rewarding} assignment.
 %    Why will be obvious once you solve the assignment.
