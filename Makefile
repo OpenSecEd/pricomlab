@@ -2,7 +2,7 @@ DOCUMENTS= 	pricomlab.pdf
 FILES= 		pricomlab.tex aims.tex literature.tex pricomlab.bib
 
 pricomlab.pdf: ${FILES}
-pricomlab.pdf: llncs biblatex-lncs bibsp.sty
+pricomlab.pdf: bibsp.sty
 
 .PHONY:
 clean:
