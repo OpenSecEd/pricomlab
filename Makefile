@@ -1,8 +1,12 @@
-DOCUMENTS= 	pricomlab.pdf
-FILES= 		pricomlab.tex aims.tex literature.tex pricomlab.bib
+FILES= 		pricomlab.tex abstract.tex pricomlab.bib
+
+.PHONY: all
+all: pricomlab.pdf
+
 
 pricomlab.pdf: ${FILES}
 pricomlab.pdf: bibsp.sty
+
 
 .PHONY:
 clean:
