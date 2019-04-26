@@ -1,4 +1,4 @@
-FILES= 		pricomlab.tex abstract.tex pricomlab.bib
+FILES= 		pricomlab.tex abstract.tex contents.tex pricomlab.bib
 
 .PHONY: all
 all: pricomlab.pdf
